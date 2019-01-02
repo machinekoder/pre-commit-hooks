@@ -1,0 +1,34 @@
+-   id: black
+    name: Run black code formatter
+    description: This hook formats Python code.
+    entry: env LC_ALL=C.UTF-8 black -q
+    language: system
+    types: [python]
+
+-   id: clang-format
+    name: Run clang-format
+    description: Clang C/C++ code formatter.
+    entry: clang-format -i
+    language: system
+    types: [file, c++]
+
+-   id: qmllint
+    name: Run qmllint
+    description: QML linter
+    entry: qmllint
+    language: system
+    files: .*\.qml
+
+-   id: qmlfmt
+    name: Run qmlfmt
+    description: qmlfmt QML code formatter.
+    entry: qmlfmt -w -e
+    language: system
+    files: .*\.qml
+
+-   id: shfmt
+    name: Run shfmt
+    description: shfmt Shell code formatter.
+    entry: shfmt -w
+    language: system
+    types: [file, shell]
